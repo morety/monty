@@ -52,6 +52,7 @@ void push(int line_number, char *arg);
 void pall();
 void execute_opcode(char *opcode, int line_number, char *argument);
 void run_monty_program(FILE *file);
+void m_pop(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
 
