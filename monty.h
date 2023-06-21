@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define STACK_SIZE 100
-
+#ifndef MONTY_H
+#define MONTY_H
 
 
 /**
@@ -36,8 +32,26 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(int line_number, const char* arg);
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define STACK_SIZE 1000
+
+typedef struct Stack {
+    int stack[STACK_SIZE];
+    int top;
+} Stack;
+
+extern Stack stack;
+
+void push(int line_number, char *arg);
 void pall();
-void process_line(char* line, int line_number);
-void process_file(const char* file_path);
+void execute_opcode(char *opcode, int line_number, char *argument);
+void run_monty_program(FILE *file);
+
+#endif /* MONTY_H */
 
