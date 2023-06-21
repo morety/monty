@@ -1,5 +1,27 @@
 #include "monty.h"
 
+
+
+/**
+ * push - Pushes an element onto the stack
+ * @line_number: The line number in the file
+ * @arg: The argument to push onto the stack
+ */
+
+
+
+/**
+ * pall - Prints all the values on the stack
+ */
+
+/**
+ * main - Entry point of the program
+ * @argc: The number of command-line arguments
+ * @argv: An array of command-line argument strings
+ * Return: EXIT_SUCCESS if successful, otherwise EXIT_FAILURE
+ */
+
+
 int stack[STACK_SIZE];
 int top = -1;
 
