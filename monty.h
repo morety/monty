@@ -1,7 +1,5 @@
 #ifndef MONTY_H
 #define MONTY_H
-
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -17,7 +15,6 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -32,27 +29,18 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
-#include <ctype.h>
 
-#define STACK_SIZE 1000
+#define STACK_SIZE 100
 
-typedef struct Stack {
-    int stack[STACK_SIZE];
-    int top;
-} Stack;
+extern int stack[STACK_SIZE];
+extern int top;
 
-extern Stack stack;
-
-void push(int line_number, char *arg);
-void pall();
-void execute_opcode(char *opcode, int line_number, char *argument);
-void run_monty_program(FILE *file);
-void m_pop(stack_t **stack, unsigned int line_number);
+void push(int value, int line_number);
+void pall(void);
 
 #endif /* MONTY_H */
 
